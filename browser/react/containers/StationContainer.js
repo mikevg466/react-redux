@@ -1,12 +1,14 @@
 import {connect} from 'react-redux';
 import Station from '../components/Station';
+import {convertSong} from '../utils';
 
-const mapStateToProps = (state, ownProps) => {
-	console.log(ownProps);
-	console.log(state);
-	/* Use ownProps.RouteParams.stationGenre, filter state.songs*/
-	// ({stations: state.songs})
-};
+const mapStateToProps = (state, ownProps) => ({
+  songs: state.songs
+    .filter((song) => song.genre === ownProps.routeParams.stationGenre)
+    .map(convertSong),
+  currentSong: state.player.currentSong,
+  isPlaying: state.player.isPlaying
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({});
 
