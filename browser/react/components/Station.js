@@ -9,7 +9,7 @@ export default function Station (props) {
 		<div>
 		<h2>{props.routeParams.stationGenre} Station</h2>
 		<Songs songs={props.songs} currentSong={props.currentSong}
-				isPlaying={props.isPlaying} toggleOne={DUMMY_TOGGLE_ONE} />
+				isPlaying={props.isPlaying} toggleOne={props.toggleOne} />
 		</div>
 		)
 }
