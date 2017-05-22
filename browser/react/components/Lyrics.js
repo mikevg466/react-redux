@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Lyrics (props) {
-
+  console.log("props.lyrics: ", props.lyrics);
   const text = props.lyrics.text;
   const artistQuery = props.artistQuery;
   const songQuery = props.songQuery;
@@ -9,10 +9,10 @@ export default function Lyrics (props) {
 
   const artistChange = e => props.setArtist(e.target.value);
   const songChange = e => props.setSong(e.target.value);
-
+  // console.log("TEXT: ", text)
   return (
     <div style={{marginTop: '20px'}}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => {handleSubmit(e, artistQuery, songQuery)}}>
         <div className="form-group row">
           <div className="col-md-6 col-xs-12">
             <label className="col-xs-2 control-label">Artist</label>
