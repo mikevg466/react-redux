@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import {toggleSong} from '../action-creators/player';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('Props:', ownProps);
-  console.log('Children', ownProps.children);
   return (
     Object.assign({
       selectedArtist: state.artists.selected,
