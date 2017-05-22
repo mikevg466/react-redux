@@ -20,7 +20,7 @@ import store from './store';
 import {Provider} from 'react-redux';
 import {receiveAlbums, getAlbumById} from './action-creators/albums';
 import {receiveArtists, getArtistById} from './action-creators/artists';
-import {receivePlaylists, getPlaylistById} from './action-creators/playlists';
+import {receivePlaylists, getPlaylistById, loadAllSongs} from './action-creators/playlists';
 
 const onAppEnter = function () {
 
@@ -51,6 +51,10 @@ const onPlaylistEnter = function (nextRouterState) {
   store.dispatch(getPlaylistById(playlistId));
 };
 
+const onStationsEnter = function(nextRouterState) {
+  store.dispatch(loadAllSongs());
+}
+
 ReactDOM.render(
   <Provider store={store} >
     <Router history={hashHistory}>
@@ -65,7 +69,7 @@ ReactDOM.render(
         <Route path="/new-playlist" component={NewPlaylistContainer}/>
         <Route path="/playlists/:playlistId" component={PlaylistContainer} onEnter={onPlaylistEnter}/>
         <Route path="/lyrics" component={LyricsContainer} />
-        <Route path='/stations' component={StationsContainer} />
+        <Route path='/stations' component={StationsContainer} onEnter={onStationsEnter}/>
         <IndexRedirect to="/albums"/>
       </Route>
     </Router>
