@@ -1,5 +1,3 @@
-import React, {Component} from 'react';
-import store from '../store';
 import Playlist from '../components/Playlist';
 import {toggleSong} from '../action-creators/player';
 import {connect} from 'react-redux';
