@@ -9,11 +9,11 @@ import FilterableArtistsContainer from './containers/FilterableArtistsContainer'
 import NewPlaylistContainer from './containers/NewPlaylistContainer';
 import PlaylistContainer from './containers/PlaylistContainer';
 import LyricsContainer from './containers/LyricsContainer';
+import StationsContainer from './containers/StationsContainer';
 
 import App from './components/App';
 import Albums from './components/Albums';
 import Songs from './components/Songs';
-import Stations from './components/Stations';
 
 import axios from 'axios';
 import store from './store';
@@ -65,7 +65,7 @@ ReactDOM.render(
         <Route path="/new-playlist" component={NewPlaylistContainer}/>
         <Route path="/playlists/:playlistId" component={PlaylistContainer} onEnter={onPlaylistEnter}/>
         <Route path="/lyrics" component={LyricsContainer} />
-        <Route path='/stations' component={Stations} />
+        <Route path='/stations' component={StationsContainer} />
         <IndexRedirect to="/albums"/>
       </Route>
     </Router>
