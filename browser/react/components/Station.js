@@ -2,8 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 import Songs from './Songs';
 
-const DUMMY_TOGGLE_ONE = function () {};
-
 export default function Station (props) {
 	return (
 		<div>
